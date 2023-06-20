@@ -10,6 +10,7 @@
 # animal_2.speak
 
 require "remover.rb"
+require './foods.rb'
 
 class Animal
   # setters and getters
@@ -21,6 +22,12 @@ class Animal
     @name = name
     @number_of_legs = number_of_legs
     @type = type
+    @liked_food = NoFood.new()
+  end
+
+# a method to tell if the animal likes a type of food or not.
+  def likes_food?(food)
+    @liked_food.is_liked?(food)
   end
 
 # all animals say this 
