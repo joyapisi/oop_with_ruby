@@ -9,7 +9,13 @@
 # animal_1.speak
 # animal_2.speak
 
+require "remover.rb"
+
 class Animal
+  # setters and getters
+  attr_accessor :name
+  attr_reader :id, :type, :number_of_legs
+  
   def initialize(type, number_of_legs, name = 'Unknown')
     @id = Random.rand(1..1000)
     @name = name
@@ -17,10 +23,14 @@ class Animal
     @type = type
   end
 
-  attr_accessor :name
-  attr_reader :id, :type, :number_of_legs
-
+# all animals say this 
   def speak
     'grrr'
+  end
+
+# remove one leg using remover parent class
+  def remove_leg
+    remover = Remover.new()
+    @number_of_legs = remover.decrease(@number_of_legs)
   end
 end
