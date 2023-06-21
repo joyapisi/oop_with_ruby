@@ -1,17 +1,17 @@
 class NoFood
-    def is_liked?(food)
-     false
-    end
+  def liked?(_food)
+    false
   end
-  
-  class DogFood
-    def is_liked?(food)
-     ["meat", "vegetable", "fruit"].member?(food)
-    end
+end
+
+class DogFood
+  def liked?(food)
+    %w[meat vegetable fruit].member?(food)
   end
-  
-  class SpiderFood
-    def is_liked?(food)
-     ["insect", "bug"].member?(food)
-    end
+end
+
+class SpiderFood
+  def liked?(food)
+    %w[insect bug].member?(food)
   end
+end
